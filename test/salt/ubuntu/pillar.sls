@@ -6,7 +6,4 @@ rlang:
   environ:
     - dummy=dummy
   pkg:
-    use_upstream_repo: true
-    deps:
-      # libatlas3-base
-      - libopenblas-base
+    use_upstream_repo: false   # not working properly

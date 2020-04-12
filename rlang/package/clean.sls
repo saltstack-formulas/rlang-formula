@@ -10,20 +10,10 @@
 include:
   - .repo.clean
 
-    {%- endif %} 
-    {%- if grains.os_family == 'MacOS' %}
-
-rlang-package-clean-cmd-run-homebrew:
-  cmd.run:
-    - name: brew remove {{ rlang.pkg.name }}
-    - runas: {{ rlang.rootuser }}
-    - onlyif: test -x /usr/local/bin/brew
-
-    {%- else %}
+    {%- endif %}
 
 rlang-package-clean-pkg-cleaned:
-  pkg.cleaned:
+  pkg.removed:
     - name: {{ rlang.pkg.name }}
     - reload_modules: true
-
-    {%- endif %}
+    - runas: {{ rlang.rootuser }}

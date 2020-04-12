@@ -15,13 +15,13 @@ rlang:
   pkg:
     name: R
     use_upstream_repo: false
-    use_upstream_macapp: true
-    deps:
-      - libatlas3-base
-      - libopenblas-base
+    use_upstream_macapp: false
+    suffix: pkg
+    deps: []
     repo: {}
     macapp:
       uri: https://cran.rstudio.com/bin
+      tag: macosx
   retry_option:
     # https://docs.saltstack.com/en/latest/ref/states/requisites.html#retrying-states
     attempts: 3

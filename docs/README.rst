@@ -61,7 +61,7 @@ This state will install R language package on MacOS (homebrew) and GNU/Linux.
 ``rlang.macapp``
 ^^^^^^^^^^^^^^^^
 
-This state will install R language macpackage on MacOS.
+This state will install R language macpackage on MacOS (not implemented, no dmg available).
 
 ``rlang.package.clean``
 ^^^^^^^^^^^^^^^^^^^^^^^^^

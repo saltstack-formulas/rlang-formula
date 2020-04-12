@@ -15,22 +15,19 @@
     {%- set macos_rootgroup = salt['cmd.run']("stat -f '%Sg' /dev/console") %}
 {%- endif %}
 
-            {%- if 'oscodename' in grains %}
 Debian:
   pkg:
     name: r-base
-    use_upstream_repo: true
+
+RedHat:
+  pkg:
     deps:
-      # libatlas3-base
-      - libopenblas-base
-    repo:
-      humanname: Rlanguage Repository for Debian
-      name: deb https://cloud.r-project.org/bin/linux/ubuntu {{ grains.oscodename }} main
-      dist: {{ grains['oscodename'] }}
-      file: /etc/apt/sources.list.d/rlang.list
-      keyserver: keys.gnupg.net # keyserver.ubuntu.com
-      keyid: E19F5F87128899B192B1A2C2AD5F960A256A04AF
-            {%- endif %}
+      - texinfo-tex
+      - openblas-devel
+
+Arch:
+  pkg:
+    name: r
 
 Suse:
   pkg:
@@ -41,8 +38,8 @@ MacOS:
   rootgroup: {{ macos_rootgroup | d('') }}
   environ_file: /etc/defaults/rlang.sh
   pkg:
-    name: r      # homebrew
+    name: r
+    use_upstream_macapp: false
     macapp:
       source_hash: 2677aaf9da03e101f9e651c80dbec25461479f56
       suffix: pkg
-      tag: macosx

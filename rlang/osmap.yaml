@@ -10,15 +10,28 @@
 # you will need to provide at least an empty dict in this file, e.g.
 # osmap: {}
 ---
+Dummy: {}
+
             {%- if 'oscodename' in grains %}
 Ubuntu:
   pkg:
+    use_upstream_repo: false    # not working properly
     repo:
       # https://cran.rstudio.com/bin/linux/ubuntu/README.html
-      humanname: Rlanguage Repository for Debian
-      name: deb https://cloud.r-project.org/bin/linux/ubuntu {{ grains.oscodename }} main
+      humanname: R language Repository for Ubuntu
+      name: deb https://cloud.r-project.org/bin/linux/ubuntu {{ grains.oscodename }} cran35/
       dist: {{ grains['oscodename'] }}
       file: /etc/apt/sources.list.d/rlang.list
-      keyserver: keys.gnupg.net
-      keyid: E19F5F87128899B192B1A2C2AD5F960A256A04AF
+      keyserver: keyserver.ubuntu.com
+      keyid: E298A3A825C0D65DFD57CBB651716619E084DAB9
             {%- endif %}
+
+RedHat:
+  pkg:
+    deps:
+      - epel-release
+
+Centos:
+  pkg:
+    deps:
+      - epel-release

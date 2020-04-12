@@ -13,6 +13,6 @@ rlang:
                   {%- endif %}
     deps:
       # libatlas3-base
-      - libopenblas-base
+      - openblas-devel
     macapp:
       uri: https://cran.rstudio.com/bin

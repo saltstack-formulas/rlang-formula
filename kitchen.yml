@@ -171,7 +171,7 @@ suites:
     verifier:
       inspec_tests:
         - path: test/integration/default
-  - name: archive
+  - name: ubuntu
     provisioner:
       state_top:
         base:
@@ -183,7 +183,55 @@ suites:
             '*':
               - rlang
       pillars_from_files:
-        rlang.sls: test/salt/archive/pillar.sls
+        rlang.sls: test/salt/ubuntu/pillar.sls
     verifier:
       inspec_tests:
-        - path: test/integration/archive
+        - path: test/integration/ubuntu
+  - name: suse
+    provisioner:
+      state_top:
+        base:
+          '*':
+            - rlang
+      pillars:
+        top.sls:
+          base:
+            '*':
+              - rlang
+      pillars_from_files:
+        rlang.sls: test/salt/default/pillar.sls
+    verifier:
+      inspec_tests:
+        - path: test/integration/suse
+  - name: redhat
+    provisioner:
+      state_top:
+        base:
+          '*':
+            - rlang
+      pillars:
+        top.sls:
+          base:
+            '*':
+              - rlang
+      pillars_from_files:
+        rlang.sls: test/salt/default/pillar.sls
+    verifier:
+      inspec_tests:
+        - path: test/integration/redhat
+  - name: arch
+    provisioner:
+      state_top:
+        base:
+          '*':
+            - rlang
+      pillars:
+        top.sls:
+          base:
+            '*':
+              - rlang
+      pillars_from_files:
+        rlang.sls: test/salt/default/pillar.sls
+    verifier:
+      inspec_tests:
+        - path: test/integration/arch

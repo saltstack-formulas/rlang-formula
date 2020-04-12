@@ -43,7 +43,7 @@ rlang-macos-app-install-macpackage:
     - name: {{ rlang.dir.tmp }}/rlang-{{ rlang.version }}
     - store: True
     - dmg: False
-    - app: True
+    - app: False
     - force: True
     - allow_untrusted: True
     - onchanges:

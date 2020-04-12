@@ -21,3 +21,5 @@ rlang-config-clean-file-absent:
       - {{ rlang.environ_file }}
     - require:
       - sls: {{ sls_package_clean }}
+
+{%- endif %}

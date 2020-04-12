@@ -11,6 +11,9 @@ rlang-macos-app-clean-files:
     - names:
       - {{ rlang.dir.tmp }}
       - /Applications/R.app
+      - /Library/Frameworks/R.framework
+      - /usr/local/bin/Rscript
+      - /usr/local/bin/R
 
     {%- else %}
 
