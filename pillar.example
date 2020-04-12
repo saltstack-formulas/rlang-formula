@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+rlang:
+  version: 3.6.3
+  environ:
+    - dummy=dummy
+  pkg:
+                  {%- if grains.os in ('Ubuntu',) %}
+    use_upstream_repo: true
+                  {%- elif grains.kernel|lower in ('macos',) %}
+    use_upstream_macapp: true
+                  {%- endif %}
+    deps:
+      # libatlas3-base
+      - libopenblas-base
+    macapp:
+      uri: https://cran.rstudio.com/bin
