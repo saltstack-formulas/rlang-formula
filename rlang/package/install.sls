@@ -21,7 +21,7 @@ rlang-package-install-pkg-deps-installed:
 rlang-package-install-pkg-installed:
   cmd.run:
     - name: dnf config-manager --enable PowerTools
-    - onlyif: {{ grains.osfinger == 'CentOS Linux-8' }}
+    - onlyif: {{ 'osfinger' in grains and grains.osfinger == 'CentOS Linux-8' }}
   pkg.installed:
     - name: {{ rlang.pkg.name }}
     - reload_modules: true
