@@ -1,7 +1,7 @@
 .. _readme:
 
 rlang-formula
-===============
+=============
 
 |img_travis| |img_sr|
 
@@ -47,34 +47,34 @@ Available states
    :local:
 
 ``rlang``
-^^^^^^^^^
+^^^^^^^
 
 *Meta-state (This is a state that includes other states)*.
 
 This installs R language package, and related configuration.
 
 ``rlang.package``
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 This state will install R language package on MacOS (homebrew) and GNU/Linux.
 
 ``rlang.macapp``
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 This state will install R language macpackage on MacOS (not implemented, no dmg available).
 
 ``rlang.package.clean``
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 This state will remove R language package on MacOS (homebrew) and GNU/Linux.
 
 ``rlang.macapp.clean``
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 This state will remove R language macpackage on MacOS.
 
 ``rlang.clean``
-^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 *Meta-state (This is a state that includes other states)*.
 
